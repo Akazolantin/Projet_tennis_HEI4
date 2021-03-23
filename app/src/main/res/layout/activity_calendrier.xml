@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
+    tools:context=".Calendrier">
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="125dp"
@@ -15,46 +14,23 @@
         android:src="@drawable/logotennis"
         ></ImageView>
 
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Bienvenue dans notre application!"
+        android:text="date"
+        android:textSize="30sp"
+        android:layout_centerHorizontal="true"
         android:layout_centerInParent="true"
-        >
-
-    </TextView>
-
-
+        ></TextView>
     <Button
-        android:id="@+id/Monbuton"
+        android:id="@+id/buttondate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Go to calendar"
         android:layout_below="@+id/textView"
-        android:layout_gravity="left"
-        android:layout_marginTop="209dp"
-        android:text="Connectez -vous"
-
         >
-
     </Button>
-
-   <Button
-       android:id="@+id/Boutoninscription"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:text="inscrit-toi!"
-       >
-
-   </Button>
-
-
-
-
-
-
-
-
 </RelativeLayout>
+

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Inscription">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="125dp"
+        android:layout_height="99dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/logotennis"
+        ></ImageView>
+
+    <TextView
+        android:id="@+id/Formulaire"
+        android:layout_width="171dp"
+        android:layout_height="52dp"
+        android:layout_below="@+id/imageView"
+        android:gravity="center"
+        android:text="Formulaire d'inscription"
+
+        ></TextView>
+
+    <EditText
+        android:id="@+id/Nom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_below="@+id/Formulaire"
+        android:inputType="textPersonName"
+        android:text="Nom:" />
+
+    <EditText
+        android:id="@+id/prenom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Nom"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Prenom:" />
+
+    <EditText
+        android:id="@+id/datenaissance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/prenom"
+        android:ems="10"
+        android:inputType="date"
+        android:text="Date de naissance:" />
+
+
+    <EditText
+        android:id="@+id/Email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/datenaissance"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:text="Email:" />
+    <EditText
+        android:id="@+id/PhoneNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Email"
+        android:ems="10"
+        android:inputType="phone"
+        android:text="Numero de telephone:" />
+
+    <EditText
+        android:id="@+id/MDP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/PhoneNumber"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Mot de passe:" />
+
+    <EditText
+    android:id="@+id/verifmdp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/MDP"
+    android:ems="10"
+    android:inputType="text"
+    android:text="Verification mot de passe:" />
+
+    <Button
+        android:id="@+id/Boutoninscription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/verifmdp"
+        android:gravity="center"
+        android:text="S'inscrire" />
+
+</RelativeLayout>
