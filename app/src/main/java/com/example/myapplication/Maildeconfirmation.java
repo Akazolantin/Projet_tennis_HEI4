@@ -1,13 +1,10 @@
 package com.example.myapplication;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
+import android.app.Activity;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 
-public class Maildeconfirmation extends AppCompatActivity {
+public class Maildeconfirmation extends Activity {
     private Button boutonvalidation;
 
     @Override
