@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -28,25 +29,43 @@ public class Pageconnexion extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pageconnexion);
         EditText identView = findViewById(R.id.username);
+        EditText identmotdepasse=findViewById(R.id.password);
         this.bouton=(Button) findViewById(R.id.button);
         bouton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 String ident = identView.getText().toString();
-                int y;
-                for (int i=0;i<identifiants.length;i++){
-                    if(ident==identifiants[i]){
-                        y=i;
-                        break;
+                String ident1 = identmotdepasse.getText().toString();
+                int i;
+                int j=-1;
+                for (i = 0; i < identifiants.length; i++) {
+                    if (ident.equals(identifiants[i])) {
+                        j=i;
                     }
                 }
-                Intent Acitivity2=new Intent(getApplicationContext(),Calendrier.class);
-                startActivity(Acitivity2);
-                finish();
-            }
-        });
+                if(j==-1){
+                    Toast.makeText(Pageconnexion.this, "Votre mot de passe ou username est incorrect", Toast.LENGTH_LONG).show();
 
+                }
+                else{
+
+                    if (ident1.equals(mdps[j])) {
+                        Intent Acitivity2 = new Intent(getApplicationContext(), Calendrier.class);
+                        startActivity(Acitivity2);
+                    } else {
+                        Toast.makeText(Pageconnexion.this, "Votre mot de passe ou username est incorrect", Toast.LENGTH_LONG).show();
+
+                    }
+
+
+
+                }}
+
+
+
+
+        });
 
     }
 }
