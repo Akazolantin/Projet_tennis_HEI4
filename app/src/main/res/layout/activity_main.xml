@@ -47,14 +47,6 @@
        android:layout_height="wrap_content"
        android:text="inscrit-toi!"
        >
-
    </Button>
-
-
-
-
-
-
-
 
 </RelativeLayout>

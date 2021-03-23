@@ -22,5 +22,16 @@
         android:layout_below="@+id/imageView"
         >
     </TextView>
+    <TextView
+        android:id="@+id/text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:drawableTop="@drawable/ic_baseline_timer_24"
+        />
+
 
 </RelativeLayout>
