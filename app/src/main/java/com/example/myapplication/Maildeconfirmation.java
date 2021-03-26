@@ -1,17 +1,23 @@
 package com.example.myapplication;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
-public class Maildeconfirmation extends Activity {
+public class Maildeconfirmation extends AppCompatActivity {
     TextView textView;
 
     @Override
@@ -38,4 +44,33 @@ public class Maildeconfirmation extends Activity {
             }
         }.start();
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_message, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_deconnexion:
+                Intent Acitivity1 = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(Acitivity1);
+                return true;
+            case R.id.menu_informations:
+                Intent Acitivity2 = new Intent(getApplicationContext(), Information.class);
+                startActivity(Acitivity2);
+                return true;
+            case R.id.menu_statistiques:
+                Intent Acitivity3 = new Intent(getApplicationContext(), Statistique.class);
+                startActivity(Acitivity3);
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+
+        }
+    }
 }
+

@@ -1,17 +1,33 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.myapplication.MainActivity">
-    <group android:checkableBehavior="single">
-        <item android:title="Home"
-              android:id="@+id/nav_home"
+<?xml version="1.0" encoding="utf-8"?>
+    <menu xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context="com.example.myapplication.MainActivity">
+            <item  android:id="@+id/menu_settings"
+                android:orderInCategory="100"
+                app:showAsAction="never"
+                android:title="setting" />
+
+            <item  android:id="@+id/menu_informations"
+                android:orderInCategory="100"
+                app:showAsAction="never"
+                android:title="informations" />
+
+            <item  android:id="@+id/menu_statistiques"
+                android:orderInCategory="100"
+                app:showAsAction="never"
+                android:title="statistique" />
+
+            <item  android:id="@+id/menu_calendrier"
+                android:orderInCategory="100"
+                app:showAsAction="never"
+                android:title="calendrier" />
 
 
-            />
+
+    </menu>
 
 
 
-</group>
 
 
-</menu>
