@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="78dp"
+    android:orientation="horizontal"
+    android:weightSum="100"
+    android:id="@+id/layout">
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="20"
+        android:text="00 - "
+        android:gravity="top"
+        android:id="@+id/hour"/>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_weight="80"
+        android:layout_height="match_parent"
+        android:text="Les infos ici"
+        android:gravity="center"
+        android:id="@+id/message"/>
+
+
+</LinearLayout>

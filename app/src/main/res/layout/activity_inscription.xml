@@ -79,12 +79,21 @@
         android:gravity="center"
         android:hint="Numero de telephone"
         android:layout_centerHorizontal="true"/>
-
+    <EditText
+        android:id="@+id/Identifiant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/PhoneNumber"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:gravity="center"
+        android:hint="Identifiant"
+        android:layout_centerHorizontal="true"/>
     <EditText
         android:id="@+id/MDP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/PhoneNumber"
+        android:layout_below="@+id/Identifiant"
         android:ems="10"
         android:inputType="text"
         android:gravity="center"
