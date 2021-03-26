@@ -38,5 +38,6 @@ public class Pagecalendrier extends Activity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        return true;
     }
 }
