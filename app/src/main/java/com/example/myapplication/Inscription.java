@@ -54,6 +54,14 @@ public class Inscription extends AppCompatActivity {
                 Intent Acitivity3 = new Intent(getApplicationContext(), Statistique.class);
                 startActivity(Acitivity3);
                 return true;
+            case R.id.menu_portail:
+                Intent Acitivity4 = new Intent(getApplicationContext(), Codeportail.class);
+                startActivity(Acitivity4);
+                return true;
+            case R.id.menu_enregister:
+                Intent Acitivity5 = new Intent(getApplicationContext(), Enregistrementcarte.class);
+                startActivity(Acitivity5);
+                return true;
 
             default:
                 return super.onOptionsItemSelected(item);

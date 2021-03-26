@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="143dp"
+        android:layout_height="114dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/logotennis"
+        ></ImageView>
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="234dp"
+        android:layout_height="70dp"
+        android:layout_below="@+id/imageView"
+        android:gravity="center"
+        android:text="ACCUEIL"
+        android:textSize="50dp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        />
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="336dp"
+        android:layout_height="56dp"
+        android:text="STATISTIQUES PERSONELLES"
+        android:gravity="center"
+        android:layout_below="@+id/textView3"
+        android:layout_centerHorizontal="true"
+        />
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="336dp"
+        android:layout_height="56dp"
+        android:gravity="center"
+        android:text="CALENDRIER"
+        android:layout_below="@+id/button2"
+        android:layout_centerHorizontal="true"
+        />
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="336dp"
+        android:layout_height="56dp"
+        android:gravity="center"
+        android:text="À PROPOS DE NOUS"
+        android:layout_below="@+id/button3"
+        android:layout_centerHorizontal="true"
+        />
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="336dp"
+        android:layout_height="56dp"
+        android:gravity="center"
+        android:text="CODE PORTAIL"
+        android:layout_below="@+id/button4"
+        android:layout_centerHorizontal="true"/>
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="336dp"
+        android:layout_height="56dp"
+        android:gravity="center"
+        android:text="SE DECONNECTER"
+        android:layout_below="@+id/button5"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>

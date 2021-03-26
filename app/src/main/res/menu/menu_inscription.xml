@@ -18,4 +18,12 @@
         android:orderInCategory="100"
         app:showAsAction="never"
         android:title="statistique" />
+    <item  android:id="@+id/menu_portail"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        android:title="Je suis devant le portail " />
+    <item  android:id="@+id/menu_enregister"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        android:title="Enregister  ma carte " />
 </menu>

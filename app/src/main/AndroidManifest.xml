@@ -16,7 +16,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-        <activity android:name=".Statistique"></activity>
+        <activity android:name=".Enregistrementcarte"></activity>
+        <activity android:name=".Codeportail" />
+        <activity android:name=".PageAcceuil" />
+        <activity android:name=".Statistique" />
         <activity android:name=".Information" />
         <activity android:name=".Messageenvoie" />
         <activity android:name=".Tableusernamemotdepasse" />
