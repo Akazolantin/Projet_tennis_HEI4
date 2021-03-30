@@ -1,6 +1,8 @@
 package com.example.myapplication;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -11,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.view.KeyEvent;
 import android.view.MenuInflater;
 import android.view.View;
 
@@ -23,6 +26,35 @@ public class MainActivity extends Activity {
     private Button bouton1;
     private Button bouton2;
 
+///////////////////////////////////////////////////////
+    private boolean back_answer = false;
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            boolean debugState = false;
+            if (debugState) {
+                Toast.makeText(this, "BACK key press", Toast.LENGTH_SHORT).show();
+            }
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage("Connectez-vous pour accéder à votre espace")
+                    .setCancelable(false)
+                    .setPositiveButton("retour", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            back_answer = true;
+                        }
+                    });
+
+            AlertDialog alert = builder.create();
+            alert.show();
+        }
+
+
+        return back_answer;
+    }
+
+    ///////////////////////////////////////////////////////////////////////////////
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
