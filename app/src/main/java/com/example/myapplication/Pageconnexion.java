@@ -53,7 +53,7 @@ public class Pageconnexion extends AppCompatActivity {
                 } else {
 
                     if (ident1.equals(mdps[j])) {
-                        Intent Acitivity2 = new Intent(getApplicationContext(), Calendrier.class);
+                        Intent Acitivity2 = new Intent(getApplicationContext(), PageAcceuil.class);
                         startActivity(Acitivity2);
                     } else {
                         Toast.makeText(Pageconnexion.this, "Votre mot de passe ou username est incorrect", Toast.LENGTH_LONG).show();
@@ -88,6 +88,7 @@ public class Pageconnexion extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
 
         }
+
     }
 }
 
