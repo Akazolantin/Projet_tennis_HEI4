@@ -7,9 +7,5 @@
         app:showAsAction="never"
         android:title="informations" />
 
-    <item  android:id="@+id/menu_statistiques"
-        android:orderInCategory="100"
-        app:showAsAction="never"
-        android:title="statistique" />
 
 </menu>

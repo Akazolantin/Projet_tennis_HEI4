@@ -83,10 +83,6 @@ public class Pageconnexion extends AppCompatActivity {
                 Intent Acitivity2 = new Intent(getApplicationContext(), Information.class);
                 startActivity(Acitivity2);
                 return true;
-            case R.id.menu_statistiques:
-                Intent Acitivity3 = new Intent(getApplicationContext(), Statistique.class);
-                startActivity(Acitivity3);
-                return true;
 
             default:
                 return super.onOptionsItemSelected(item);
