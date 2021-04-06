@@ -42,14 +42,14 @@
         android:layout_below="@+id/textView"
         android:layout_gravity="left"
         android:layout_marginTop="209dp"
-        android:text="Connectez -vous"
+        android:text="Connexion"
         >
     </Button>
     <Button
         android:id="@+id/Boutoninscription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="inscrit-toi!"
+        android:text="Inscription"
         android:layout_alignParentRight="true"
         android:layout_marginTop="209dp"
         android:layout_below="@+id/textView"
