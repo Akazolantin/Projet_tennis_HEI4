@@ -28,8 +28,6 @@ public class Pagecalendrier extends AppCompatActivity {
                 Intent intent1 = new Intent(Pagecalendrier.this, Calendrier.class);
                 intent1.putExtra("date", date);
                 startActivity(intent1);
-
-
             }
         });
 

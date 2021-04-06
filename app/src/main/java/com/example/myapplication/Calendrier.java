@@ -76,7 +76,7 @@ public class Calendrier extends AppCompatActivity{
 
         @Override
         public void onBindViewHolder( MyAdapter.MyViewHolder holder, int position) {
-            Hour hour=new Hour(9,2,date);
+            Hour hour=new Hour(9,2);
             holder.setHour(hour);
         }
 
