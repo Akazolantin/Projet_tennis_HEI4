@@ -27,6 +27,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.gms.common.api.Response;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -65,7 +66,7 @@ public class Pageconnexion extends AppCompatActivity {
                         public void onResponse(String response) {
                             try {
                                 if(jsonToBoolean(response)){
-                                    Intent Acitivity2 = new Intent(getApplicationContext(), Calendrier.class);
+                                    Intent Acitivity2 = new Intent(getApplicationContext(), PageAcceuil.class);
                                     startActivity(Acitivity2);
                                 } else {
                                     Toast.makeText(Pageconnexion.this, "Votre mot de passe ou identifiant est incorrect", Toast.LENGTH_LONG).show();
