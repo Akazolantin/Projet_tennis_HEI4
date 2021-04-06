@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="137dp"
         android:layout_height="110dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/logotennis"></ImageView>
+        android:src="@drawable/logotennis">
+
+    </ImageView>
     <TextView
         android:id="@+id/Titre"
         android:layout_width="408dp"
@@ -20,6 +21,7 @@
         android:text="INFORMATIONS DU CLUB"
         android:textSize="25dp"
         android:textStyle="bold"
+        android:textColor="@color/purple_700"
         android:layout_below="@+id/imageView"
         android:layout_centerHorizontal="true"/>
     <TextView
@@ -28,19 +30,26 @@
         android:layout_height="59dp"
         android:text="Horaire du club :         Lundi au Vendredi 8h-20h \n                                      Samedi 9h-19h"
         android:layout_below="@+id/Titre"
-        android:layout_centerHorizontal="true"/>
+        android:textColor="@color/black"
+        android:layout_centerHorizontal="true"
+        />
     <TextView
         android:id="@+id/textView8"
         android:layout_width="357dp"
         android:layout_height="59dp"
         android:text="Contacts:             0320123456"
+        android:textColor="@color/black"
         android:layout_below="@+id/textView9"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        />
     <TextView
         android:id="@+id/textView4"
         android:layout_width="354dp"
         android:layout_height="85dp"
         android:text="Cette semaine dans votre club:      \n  \n      Compétition junior ce samedi 27 mars, nous vous attendons nombreux!"
         android:layout_below="@+id/textView8"
-        android:layout_centerHorizontal="true"/>
+        android:textColor="@color/black"
+        android:layout_centerHorizontal="true"
+
+        />
 </RelativeLayout>

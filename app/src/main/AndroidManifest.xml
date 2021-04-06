@@ -20,7 +20,8 @@
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
         android:theme="@style/Theme.MyApplication">
-        <activity android:name=".Enregistrementcarte"></activity>
+        <activity android:name=".Pageadministrateur"></activity>
+        <activity android:name=".Enregistrementcarte" />
         <activity android:name=".Codeportail" />
         <activity android:name=".PageAcceuil" />
         <activity android:name=".Statistique" />
