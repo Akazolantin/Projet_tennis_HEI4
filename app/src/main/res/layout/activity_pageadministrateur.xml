@@ -14,5 +14,30 @@
         android:src="@drawable/logotennis"
         ></ImageView>
 
+    <Button
+        android:id="@+id/BoutonGestionclient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:text="Gestions des clients"
+        />
+    <Button
+        android:id="@+id/BoutonGestionterrain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gestions des terrains"
+        android:layout_below="@+id/BoutonGestionclient"
+        android:layout_centerInParent="true"
+        />
+    <Button
+        android:id="@+id/Editerlecompte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Editermoncompte"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/BoutonGestionterrain"
+        />
+
 
 </RelativeLayout>

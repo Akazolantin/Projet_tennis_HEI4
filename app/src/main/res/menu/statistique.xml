@@ -1,29 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.example.myapplication.Inscription">
-
-
+    <item  android:id="@+id/menu_deconnexion"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        android:title="Deconnexion" />
     <item  android:id="@+id/menu_informations"
         android:orderInCategory="100"
         app:showAsAction="never"
         android:title="informations" />
 
-    <item  android:id="@+id/menu_statistiques"
-        android:orderInCategory="100"
-        app:showAsAction="never"
-        android:title="statistique" />
-    <item  android:id="@+id/menu_portail"
-        android:orderInCategory="100"
-        app:showAsAction="never"
-        android:title="Je suis devant le portail " />
     <item  android:id="@+id/menu_enregister"
         android:orderInCategory="100"
         app:showAsAction="never"
         android:title="Enregister  ma carte " />
-    <item  android:id="@+id/menu_administrateur"
+
+    <item  android:id="@+id/menu_portail"
         android:orderInCategory="100"
         app:showAsAction="never"
-        android:title="compte administrateur " />
+        android:title="Je suis devant le portail "/>
+
 </menu>
