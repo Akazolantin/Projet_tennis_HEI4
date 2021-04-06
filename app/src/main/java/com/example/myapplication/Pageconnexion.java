@@ -59,7 +59,7 @@ public class Pageconnexion extends AppCompatActivity {
             public void onClick(View view) {
                 if (ActivityCompat.checkSelfPermission(Pageconnexion.this, Manifest.permission.INTERNET) == PackageManager.PERMISSION_GRANTED) {
                     RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-                    String URL = "http://10.224.0.125/tennis.php?Identification=true&identifiant="+identView.getText().toString()+"&MotDePasse="+identmotdepasse.getText().toString();;
+                    String URL = "http://10.224.0.130/tennis.php?Identification=true&identifiant="+identView.getText().toString()+"&MotDePasse="+identmotdepasse.getText().toString();;
                     StringRequest stringRequest = new StringRequest(Request.Method.GET, URL, new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
@@ -68,7 +68,7 @@ public class Pageconnexion extends AppCompatActivity {
                                     Intent Acitivity2 = new Intent(getApplicationContext(), Calendrier.class);
                                     startActivity(Acitivity2);
                                 } else {
-                                    Toast.makeText(Pageconnexion.this, "Votre mot de passe ou username est incorrect", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(Pageconnexion.this, "Votre mot de passe ou identifiant est incorrect", Toast.LENGTH_LONG).show();
                                 }
                             } catch (JSONException e) {
                                 e.printStackTrace();
