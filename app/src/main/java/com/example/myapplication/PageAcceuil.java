@@ -21,7 +21,6 @@ public class PageAcceuil extends AppCompatActivity {
             public void onClick(View v) {
                 Intent otherActivity = new Intent(getApplicationContext(),Statistique.class );
                 startActivity(otherActivity);
-
             }
         });
 
