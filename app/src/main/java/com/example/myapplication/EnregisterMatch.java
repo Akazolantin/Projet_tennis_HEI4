@@ -1,16 +1,38 @@
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import android.Manifest;
 import android.app.DatePickerDialog;
+import android.app.DownloadManager;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.NumberPicker;
 import android.widget.Spinner;
+import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+//import com.google.android.gms.common.api.Response;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
 import java.util.Calendar;
 
 public class EnregisterMatch extends AppCompatActivity {
@@ -19,35 +41,65 @@ public class EnregisterMatch extends AppCompatActivity {
     Button annulerButton;
     Button date;
     Spinner adversaireSpinner;
-    EditText scoreMatch;
     Calendar calendar;
     DatePickerDialog datePicker;
+    private NumberPicker nP1;
+    private NumberPicker nP2;
+    private NumberPicker nP3;
+    private NumberPicker nP4;
+    private NumberPicker nP5;
+    private NumberPicker nP6;
+    private ArrayList<String> joueurs= new ArrayList<String>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_enregister_match);
-        validerButton=(Button) findViewById(R.id.match_button_valider);
-        annulerButton=(Button) findViewById(R.id.match_button_annuler);
+        validerButton = (Button) findViewById(R.id.match_button_valider);
+        annulerButton = (Button) findViewById(R.id.match_button_annuler);
         date = (Button) findViewById(R.id.match_date);
-        adversaireSpinner=(Spinner) findViewById(R.id.match_adversaire);
-        scoreMatch=(EditText) findViewById(R.id.match_score);
+        adversaireSpinner = (Spinner) findViewById(R.id.match_adversaire);
+        nP1 = findViewById(R.id.match_score_set1_j1);
+        nP2 = findViewById(R.id.match_score_set1_j2);
+        nP3 = findViewById(R.id.match_score_set2_j1);
+        nP4 = findViewById(R.id.match_score_set2_j2);
+        nP5 = findViewById(R.id.match_score_set3_j1);
+        nP6 = findViewById(R.id.match_score_set3_j2);
 
+        nP1.setMaxValue(7);
+        nP1.setMinValue(0);
+
+        nP2.setMaxValue(7);
+        nP2.setMinValue(0);
+
+        nP3.setMaxValue(7);
+        nP3.setMinValue(0);
+
+        nP4.setMaxValue(7);
+        nP4.setMinValue(0);
+
+        nP5.setMaxValue(7);
+        nP5.setMinValue(0);
+
+        nP6.setMaxValue(7);
+        nP6.setMinValue(0);
 
         date.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                calendar=Calendar.getInstance();
-                int lday=calendar.get(Calendar.DAY_OF_MONTH);
+                calendar = Calendar.getInstance();
+                int lday = calendar.get(Calendar.DAY_OF_MONTH);
                 int lmonth = calendar.get(Calendar.MONTH);
-                int lyear= calendar.get(Calendar.YEAR);
+                int lyear = calendar.get(Calendar.YEAR);
 
-                datePicker= new DatePickerDialog(EnregisterMatch.this, new DatePickerDialog.OnDateSetListener() {
+                datePicker = new DatePickerDialog(EnregisterMatch.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                        date.setText(dayOfMonth+"/"+month+"/"+year);
+                        date.setText(dayOfMonth + "/" + (month+1) + "/" + year);
                     }
-                },lday, lmonth, lyear);
+                }, lday, lmonth, lyear);
+                datePicker.show();
             }
         });
 
@@ -67,7 +119,42 @@ public class EnregisterMatch extends AppCompatActivity {
                 startActivity(Annulation);
             }
         });
+
+        if (ActivityCompat.checkSelfPermission(EnregisterMatch.this, Manifest.permission.INTERNET) == PackageManager.PERMISSION_GRANTED) {
+            RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
+            String URL = "http://10.224.0.130/tennis.php?Liste_Joueurs=true";
+            StringRequest stringRequest = new StringRequest(Request.Method.GET, URL, new Response.Listener<String>() {
+                @Override
+                public void onResponse(String response) {
+                    try {
+                        JSONArray jsonarray = new JSONArray(response);
+
+                        for (int i=0;i<=jsonarray.length();i++) {
+                            JSONObject data = jsonarray.getJSONObject(i);
+                            joueurs.add(data.getString("Identifiant"));
+
+                        }
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
+                }
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Toast.makeText(EnregisterMatch.this, "Erreur lors du chargement.", Toast.LENGTH_SHORT).show();
+                }
+            });
+            queue.add(stringRequest);
+        } else{
+            Toast.makeText(EnregisterMatch.this, "Vous n'avez pas donné la permission.", Toast.LENGTH_SHORT).show();
+        }
+        //System.out.println(joueurs);
+        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, joueurs);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adversaireSpinner.setAdapter(adapter);
     }
 
 
-}
+    }
