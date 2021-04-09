@@ -6,6 +6,25 @@ public class SIngleton {
     private static ArrayList<Hour> heures = new ArrayList<Hour>();
     private static int nbrTerrains=6;
     private static int id;
+    private static int mois;
+
+    private static boolean admin;
+
+    public static boolean isAdmin() {
+        return admin;
+    }
+
+    public static void setAdmin(boolean admi) {
+        admin = admi;
+    }
+
+    public static int getMois() {
+        return mois;
+    }
+
+    public static void setMois(int moi) {
+        mois = moi;
+    }
 
     private static String Tag="SIngleton";
 
@@ -71,7 +90,7 @@ public class SIngleton {
             terrains.add(i);
         }
         for (Hour heure : heures) {
-            for (int i = 0; i < nbrTerrains; i++) {
+            for (int i = 1; i < nbrTerrains; i++) {
                 if (date == heure.getDate() && hour == heure.getHour() && terrains.get(i) == heure.getTerrain()) {
                     terrains.remove(i);
                 }

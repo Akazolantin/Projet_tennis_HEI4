@@ -139,6 +139,7 @@ public class Pagecalendrier extends AppCompatActivity {
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     public void downloadURL(){
+        SIngleton.setMois(selectedDate.getMonthValue()+1);
         SIngleton.setHeures(new ArrayList<Hour>());
         if (ActivityCompat.checkSelfPermission(Pagecalendrier.this, Manifest.permission.INTERNET) == PackageManager.PERMISSION_GRANTED) {
             RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
