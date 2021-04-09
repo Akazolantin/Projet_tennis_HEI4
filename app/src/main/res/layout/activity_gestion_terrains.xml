@@ -14,9 +14,8 @@
         android:layout_centerHorizontal="true"
         android:src="@drawable/logotennis"
         ></ImageView>
-
     <TextView
-        android:id="@+id/Titre"
+        android:id="@+id/gestion_terrain"
         android:layout_width="408dp"
         android:layout_height="122dp"
         android:gravity="center"
@@ -31,16 +30,15 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/Titre"
+        android:layout_below="@+id/gestion_terrain"
         android:textStyle="bold"
         android:textColor="@color/black"
         android:textSize="20dp"
         android:gravity="center"
         android:layout_centerHorizontal="true"
         android:text="NOMBRE DE TERRAIN DISPONIBLE :" />
-
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/terraindispo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView2"
@@ -52,7 +50,7 @@
         android:textSize="25dp"
         android:textStyle="bold" />
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/button_plus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView2"
@@ -61,7 +59,7 @@
         android:layout_marginTop="89dp"
         android:text="+" />
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/button_moins"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView2"
@@ -69,5 +67,4 @@
         android:layout_marginTop="89dp"
         android:layout_marginRight="26dp"
         android:text="-" />
-
 </RelativeLayout>
