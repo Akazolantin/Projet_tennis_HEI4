@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -31,6 +32,7 @@ public class Pageadministrateur extends AppCompatActivity {
         bouton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.d("toto","toto");
                 Intent otherActivity = new Intent(getApplicationContext(),Gestion_terrains.class);
                 startActivity(otherActivity);
             }
