@@ -10,11 +10,13 @@ public class PageAcceuil extends AppCompatActivity {
     private Button boutton4;
     private Button boutton5;
     private Button boutton6;
+    private Button boutton7;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page_acceuil);
+
         this.boutton2 = (Button) findViewById(R.id.button2);
         boutton2.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -55,6 +57,15 @@ public class PageAcceuil extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent otherActivity = new Intent(getApplicationContext(),MainActivity.class );
+                startActivity(otherActivity);
+
+            }
+        });
+        this.boutton7 = (Button) findViewById(R.id.button7);
+        boutton7.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent otherActivity = new Intent(getApplicationContext(),EnregisterMatch.class );
                 startActivity(otherActivity);
 
             }
