@@ -59,6 +59,7 @@ public class Pageconnexion extends AppCompatActivity {
                                 if(jsonToBoolean(response)){
                                     JSONObject object =new JSONObject(response);
                                     SIngleton.setId(object.getInt("id"));
+                                    SIngleton.setAdmin(object.getBoolean("admin"));
                                     Intent Acitivity2 = new Intent(getApplicationContext(), PageAcceuil.class);
                                     startActivity(Acitivity2);
                                 } else {

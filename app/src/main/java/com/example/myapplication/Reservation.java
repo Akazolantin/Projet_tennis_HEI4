@@ -49,6 +49,7 @@ public class Reservation extends AppCompatActivity {
         Spinner terrainSpinner = (Spinner) findViewById(R.id.terrain);
 
         joueurs.add("Pas d'adversaire");
+        Ids.add(0);
         if (ActivityCompat.checkSelfPermission(Reservation.this, Manifest.permission.INTERNET) == PackageManager.PERMISSION_GRANTED) {
             RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
             String URL = "http://10.224.0.130/tennis.php?Liste_Joueurs=true";
@@ -57,7 +58,6 @@ public class Reservation extends AppCompatActivity {
                 public void onResponse(String response) {
                     try {
                         JSONArray jsonarray = new JSONArray(response);
-
                         for (int i=0;i<jsonarray.length();i++) {
                             JSONObject data = jsonarray.getJSONObject(i);
                             joueurs.add(data.getString("Identifiant"));
