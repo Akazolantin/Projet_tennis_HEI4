@@ -1,23 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="137dp"
-        android:layout_height="110dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/logotennis"></ImageView>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/Title"
-        android:layout_width="408dp"
-        android:layout_height="122dp"
-        android:gravity="center"
-        android:text="STATISTIQUES"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        android:layout_below="@+id/imageView"
-        android:layout_centerHorizontal="true"/>
-</RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/logotennis"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="STATISTIQUES"
+            android:textSize="30dp"
+            android:gravity="center"/>
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/statistiques_recycler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="30dp"
+        />
+
+</LinearLayout>

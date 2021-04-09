@@ -25,10 +25,11 @@
         android:textColor="@color/black"
         android:textSize="20dp"
         android:layout_centerHorizontal="true"
+        android:layout_margin="5dp"
         ></TextView>
 
     <EditText
-        android:id="@+id/Nom"
+        android:id="@+id/inscription_nom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -36,90 +37,99 @@
         android:inputType="textPersonName"
         android:gravity="center"
         android:hint="Nom"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:layout_margin="5dp"/>
 
     <EditText
-        android:id="@+id/prenom"
+        android:id="@+id/inscription_prenom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/Nom"
+        android:layout_below="@+id/inscription_nom"
         android:ems="10"
         android:inputType="textPersonName"
         android:gravity="center"
         android:hint="Prenom"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:layout_margin="5dp"/>
 
     <EditText
-        android:id="@+id/datenaissance"
+        android:id="@+id/inscription_date_naissance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/prenom"
+        android:layout_below="@+id/inscription_prenom"
         android:ems="10"
         android:inputType="date"
         android:gravity="center"
         android:hint="Date de naissance"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:layout_margin="5dp"/>
 
 
     <EditText
-        android:id="@+id/Email"
+        android:id="@+id/inscription_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/datenaissance"
+        android:layout_below="@+id/inscription_date_naissance"
         android:ems="10"
         android:inputType="textEmailAddress"
         android:gravity="center"
         android:hint="Email"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:layout_margin="5dp"/>
     <EditText
-        android:id="@+id/PhoneNumber"
+        android:id="@+id/inscription_phone_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/Email"
+        android:layout_below="@+id/inscription_email"
         android:ems="10"
         android:inputType="phone"
         android:gravity="center"
         android:hint="Numero de telephone"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:layout_margin="5dp"/>
     <EditText
-        android:id="@+id/Identifiant"
+        android:id="@+id/inscription_identifiant"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/PhoneNumber"
+        android:layout_below="@+id/inscription_phone_number"
         android:ems="10"
         android:inputType="textPersonName"
         android:gravity="center"
         android:hint="Identifiant"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:layout_margin="5dp"/>
     <EditText
-        android:id="@+id/MDP"
+        android:id="@+id/inscription_mdp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/Identifiant"
+        android:layout_below="@+id/inscription_identifiant"
         android:ems="10"
         android:inputType="text"
         android:gravity="center"
         android:hint="Mot de passe"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:layout_margin="5dp"/>
 
     <EditText
-    android:id="@+id/verifmdp"
+    android:id="@+id/inscription_verif_mdp"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_below="@+id/MDP"
+    android:layout_below="@+id/inscription_mdp"
     android:ems="10"
     android:inputType="text"
     android:gravity="center"
     android:hint="Verification mot de passe"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:layout_margin="5dp"/>
 
     <Button
-        android:id="@+id/Boutoninscription"
+        android:id="@+id/inscription_button_inscription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/verifmdp"
+        android:layout_below="@+id/inscription_verif_mdp"
         android:gravity="center"
         android:text="S'inscrire"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:layout_margin="5dp"/>
 
 </RelativeLayout>

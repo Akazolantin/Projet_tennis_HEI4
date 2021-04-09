@@ -67,4 +67,14 @@
         android:layout_below="@+id/button5"
         android:layout_centerHorizontal="true"/>
 
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="336dp"
+        android:layout_height="56dp"
+        android:text="ENREGISTRER UN MATCH"
+        android:gravity="center"
+        android:layout_below="@+id/button6"
+        android:layout_centerHorizontal="true"
+        />
+
 </RelativeLayout>
