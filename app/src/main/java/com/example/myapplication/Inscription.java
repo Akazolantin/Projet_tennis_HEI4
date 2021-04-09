@@ -42,10 +42,6 @@ public class Inscription extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.menu_deconnexion:
-                Intent Acitivity1 = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(Acitivity1);
-                return true;
             case R.id.menu_informations:
                 Intent Acitivity2 = new Intent(getApplicationContext(), Information.class);
                 startActivity(Acitivity2);
@@ -61,6 +57,10 @@ public class Inscription extends AppCompatActivity {
             case R.id.menu_enregister:
                 Intent Acitivity5 = new Intent(getApplicationContext(), Enregistrementcarte.class);
                 startActivity(Acitivity5);
+                return true;
+            case R.id.menu_administrateur:
+                Intent Acitivity6 = new Intent(getApplicationContext(),Pageadministrateur.class);
+                startActivity(Acitivity6);
                 return true;
 
             default:

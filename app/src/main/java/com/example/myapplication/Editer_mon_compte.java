@@ -8,17 +8,18 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class Statistique extends AppCompatActivity {
+public class Editer_mon_compte extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_statistique);
+        setContentView(R.layout.activity_editer_mon_compte);
+
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.statistique, menu);
+        getMenuInflater().inflate(R.menu.edite_compte, menu);
         return true;
     }
 
@@ -29,17 +30,20 @@ public class Statistique extends AppCompatActivity {
                 Intent Acitivity1 = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(Acitivity1);
                 return true;
-            case R.id.menu_portail:
-                Intent Acitivity5 = new Intent(getApplicationContext(), Codeportail.class);
-                startActivity(Acitivity5);
+            case R.id.menu_informations:
+                Intent Acitivity2 = new Intent(getApplicationContext(), Information.class);
+                startActivity(Acitivity2);
+                return true;
+            case R.id.menu_statistiques:
+                Intent Acitivity3 = new Intent(getApplicationContext(), Statistique.class);
+                startActivity(Acitivity3);
                 return true;
             case R.id.menu_enregister:
-                Intent Acitivity6 = new Intent(getApplicationContext(), Enregistrementcarte.class);
-                startActivity(Acitivity6);
+                Intent Acitivity4 = new Intent(getApplicationContext(), Statistique.class);
+                startActivity(Acitivity4);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
-
 
         }
     }

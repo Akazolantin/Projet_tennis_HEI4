@@ -4,6 +4,7 @@
     package="com.example.myapplication">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -20,6 +21,12 @@
         android:theme="@style/Theme.MyApplication"
         android:usesCleartextTraffic="true">
         <activity android:name=".Reservation"></activity>
+        <activity android:name=".Pageadministrateur" />
+        android:theme="@style/Theme.MyApplication"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".Editer_mon_compte"></activity>
+        <activity android:name=".Gestion_terrains" />
+        <activity android:name=".Gestiondesclient" />
         <activity android:name=".Pageadministrateur" />
         <activity android:name=".Enregistrementcarte" />
         <activity android:name=".EnregisterMatch" />
