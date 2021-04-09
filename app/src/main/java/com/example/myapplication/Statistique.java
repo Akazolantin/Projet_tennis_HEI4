@@ -100,6 +100,10 @@ public class Statistique extends AppCompatActivity {
                 Intent Acitivity6 = new Intent(getApplicationContext(), Enregistrementcarte.class);
                 startActivity(Acitivity6);
                 return true;
+            case R.id.menu_administrateur:
+                Intent Acitivity7 = new Intent(getApplicationContext(),Pageadministrateur.class);
+                startActivity(Acitivity7);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
 

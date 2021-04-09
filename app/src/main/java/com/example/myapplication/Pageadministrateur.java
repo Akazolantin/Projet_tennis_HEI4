@@ -12,6 +12,7 @@ import android.widget.Button;
 
 public class Pageadministrateur extends AppCompatActivity {
     private Button bouton1;
+    private Button bouton2;
     private Button bouton3;
 
     @Override
@@ -26,7 +27,14 @@ public class Pageadministrateur extends AppCompatActivity {
                 startActivity(otherActivity);
             }
         });
-
+        this.bouton2 = (Button) findViewById(R.id.BoutonGestionterrain);
+        bouton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent otherActivity = new Intent(getApplicationContext(),Gestion_terrains.class);
+                startActivity(otherActivity);
+            }
+        });
         this.bouton3 = (Button) findViewById(R.id.Editemoncompte);
         bouton3.setOnClickListener(new View.OnClickListener() {
             @Override
