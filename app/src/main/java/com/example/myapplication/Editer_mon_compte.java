@@ -7,13 +7,24 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 public class Editer_mon_compte extends AppCompatActivity {
+    private Button boutonediter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editer_mon_compte);
+        this.boutonediter=(Button) findViewById(R.id.Boutonediter);
+        boutonediter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent otherActivity = new Intent (getApplicationContext(),Pageadministrateur.class);
+                startActivity(otherActivity);
+            }
+        });
 
     }
 
@@ -44,7 +55,7 @@ public class Editer_mon_compte extends AppCompatActivity {
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
-
         }
     }
 }
+
