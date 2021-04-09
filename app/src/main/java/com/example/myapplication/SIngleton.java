@@ -105,6 +105,8 @@ public class SIngleton {
     }
 
     public static void setNbrTerrains(int nbrTerrains) {
-        SIngleton.nbrTerrains = nbrTerrains;
+        if(nbrTerrains>0 &&nbrTerrains<=25) {
+            SIngleton.nbrTerrains = nbrTerrains;
+        }
     }
 }

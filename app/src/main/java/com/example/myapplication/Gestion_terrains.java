@@ -39,7 +39,7 @@ public class Gestion_terrains extends AppCompatActivity  {
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.information, menu);
+        getMenuInflater().inflate(R.menu.gestionterrain, menu);
         return true;
     }
 
@@ -49,14 +49,6 @@ public class Gestion_terrains extends AppCompatActivity  {
             case R.id.menu_deconnexion:
                 Intent Acitivity1 = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(Acitivity1);
-                return true;
-            case R.id.menu_informations:
-                Intent Acitivity2 = new Intent(getApplicationContext(), Information.class);
-                startActivity(Acitivity2);
-                return true;
-            case R.id.menu_statistiques:
-                Intent Acitivity3 = new Intent(getApplicationContext(), Statistique.class);
-                startActivity(Acitivity3);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
