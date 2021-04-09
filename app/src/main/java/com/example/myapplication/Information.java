@@ -41,6 +41,10 @@ public class Information extends AppCompatActivity {
                 Intent Acitivity5 = new Intent(getApplicationContext(), Enregistrementcarte.class);
                 startActivity(Acitivity5);
                 return true;
+            case R.id.menu_administrateur:
+                Intent Acitivity6 = new Intent(getApplicationContext(),Pageadministrateur.class);
+                startActivity(Acitivity6);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
 

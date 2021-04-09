@@ -84,7 +84,7 @@ public class Inscription extends AppCompatActivity {
             public void afterTextChanged(Editable s) {
                 if(text_verif_mdp.equals(text_mdp)==false ){
                     Toast.makeText(Inscription.this, "Votre mot de passe ou identifiant est incorrect", Toast.LENGTH_LONG).show();
-                    set
+
                 }
             }
         });
@@ -127,11 +127,6 @@ public class Inscription extends AppCompatActivity {
                 Intent Acitivity5 = new Intent(getApplicationContext(), Enregistrementcarte.class);
                 startActivity(Acitivity5);
                 return true;
-            case R.id.menu_administrateur:
-                Intent Acitivity6 = new Intent(getApplicationContext(),Pageadministrateur.class);
-                startActivity(Acitivity6);
-                return true;
-
             default:
                 return super.onOptionsItemSelected(item);
 

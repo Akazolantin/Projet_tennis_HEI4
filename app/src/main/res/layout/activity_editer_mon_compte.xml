@@ -26,52 +26,87 @@
         android:textColor="@color/purple_700"
         android:textSize="20dp"
         android:textStyle="bold" />
-
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="410dp"
-        android:layout_height="92dp"
+    <TextView
+        android:id="@+id/textview1"
+        android:layout_width="match_parent"
+        android:layout_height="27dp"
         android:layout_below="@+id/Titre"
         android:layout_centerHorizontal="true"
         android:text="Changer mon mot de passe"
         android:textColor="@color/black"
         android:textSize="10dp"
         android:textStyle="bold" />
-
     <EditText
-        android:id="@+id/editText3"
-        android:layout_width="410dp"
-        android:layout_height="92dp"
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="27dp"
+        android:layout_below="@+id/textview1"
+        android:layout_centerHorizontal="true"
+        android:inputType="textPassword"
+        android:textColor="@color/black"
+        android:textSize="10dp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/Text3"
+        android:layout_width="match_parent"
+        android:layout_height="27dp"
         android:layout_below="@+id/editText"
         android:layout_centerHorizontal="true"
         android:text="Confirmation de mon nouveau mot de passe"
         android:textColor="@color/black"
         android:textSize="10dp"
         android:textStyle="bold" />
-
     <EditText
-        android:id="@+id/editText1"
-        android:layout_width="410dp"
-        android:layout_height="92dp"
+        android:id="@+id/editText3"
+        android:layout_width="match_parent"
+        android:layout_height="27dp"
+        android:layout_below="@+id/Text3"
+        android:layout_centerHorizontal="true"
+        android:inputType="textPassword"
+        android:textColor="@color/black"
+        android:textSize="10dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/text4"
+        android:layout_width="match_parent"
+        android:layout_height="27dp"
         android:layout_below="@+id/editText3"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="-12dp"
         android:text="Changer mon numéro de téléphone"
         android:textColor="@color/black"
         android:textSize="10dp"
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/editText2"
-        android:layout_width="410dp"
-        android:layout_height="92dp"
+        android:id="@+id/editText1"
+        android:layout_width="match_parent"
+        android:layout_height="27dp"
+        android:layout_below="@+id/text4"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/black"
+        android:textSize="10dp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/text5"
+        android:layout_width="match_parent"
+        android:layout_height="27dp"
         android:layout_below="@+id/editText1"
         android:layout_centerHorizontal="true"
         android:text="Changer mon email"
         android:textColor="@color/black"
         android:textSize="10dp"
         android:textStyle="bold" />
-
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="match_parent"
+        android:layout_height="27dp"
+        android:layout_below="@+id/text5"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/black"
+        android:inputType="textEmailAddress"
+        android:textSize="10dp"
+        android:textStyle="bold" />
     <Button
         android:id="@+id/Boutonediter"
         android:layout_width="wrap_content"
@@ -81,6 +116,4 @@
         android:gravity="center"
         android:layout_centerHorizontal="true"
         android:text="Enregistrer" />
-
-
 </RelativeLayout>

@@ -20,5 +20,9 @@
         android:orderInCategory="100"
         app:showAsAction="never"
         android:title="Je suis devant le portail " />
+    <item  android:id="@+id/menu_administrateur"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        android:title="compte administrateur " />
 </menu>
 
