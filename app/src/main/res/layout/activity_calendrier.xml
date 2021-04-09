@@ -34,30 +34,13 @@
                 ></TextView>
 
         </LinearLayout>
-        <LinearLayout
+
+        <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="72"
-            android:orientation="horizontal"
-            android:weightSum="2">
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:id="@+id/recyclerG"
-                />
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:id="@+id/recyclerD"
-                />
-
-        </LinearLayout>
-
-
-
-
+            android:id="@+id/recycler"
+            />
 
         <Button
             android:id="@+id/buttondate"

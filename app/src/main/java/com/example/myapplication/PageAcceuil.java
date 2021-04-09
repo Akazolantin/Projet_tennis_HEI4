@@ -28,7 +28,7 @@ public class PageAcceuil extends AppCompatActivity {
         boutton3.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent otherActivity = new Intent(getApplicationContext(),Calendrier.class );
+                Intent otherActivity = new Intent(getApplicationContext(),Pagecalendrier.class );
                 startActivity(otherActivity);
             }
         });

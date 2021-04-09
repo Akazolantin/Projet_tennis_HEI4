@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -27,8 +28,9 @@ public class Calendrier extends AppCompatActivity{
     private static final String TAG = "Calendrier";
     private TextView textedate;
     private Button Boutondate;
-    private RecyclerView recyclerViewD,recyclerViewG;
+    private RecyclerView recyclerView;
     private String date;
+    private int intDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,19 +40,15 @@ public class Calendrier extends AppCompatActivity{
         Boutondate = (Button) findViewById(R.id.buttondate);
         Intent incomingIntent = getIntent();
         String date = incomingIntent.getStringExtra("date");
+        intDate = incomingIntent.getIntExtra("intDate",0);
         textedate.setText(date);
 
-        recyclerViewD = findViewById(R.id.recyclerD);
-        recyclerViewG = findViewById(R.id.recyclerG);
-        recyclerViewD.setHasFixedSize(true);
-        recyclerViewG.setHasFixedSize(true);
-        RecyclerView.LayoutManager layoutManager1 = new LinearLayoutManager(this);
-        recyclerViewD.setLayoutManager(layoutManager1);
-        RecyclerView.LayoutManager layoutManager2 = new LinearLayoutManager(this);
-        recyclerViewG.setLayoutManager(layoutManager2);
+        recyclerView = findViewById(R.id.recycler);
+        recyclerView.setHasFixedSize(true);
+        GridLayoutManager layoutManager = new GridLayoutManager(this,2);
+        recyclerView.setLayoutManager(layoutManager);
         RecyclerView.Adapter mAdapter = new MyAdapter();
-        recyclerViewG.setAdapter(mAdapter);
-        recyclerViewD.setAdapter(mAdapter);
+        recyclerView.setAdapter(mAdapter);
 
 
 
@@ -60,7 +58,6 @@ public class Calendrier extends AppCompatActivity{
                 Intent intent = new Intent(Calendrier.this, Pagecalendrier.class);
                 startActivity(intent);
                 finish();
-
             }
         });
 
@@ -76,36 +73,59 @@ public class Calendrier extends AppCompatActivity{
 
         @Override
         public void onBindViewHolder( MyAdapter.MyViewHolder holder, int position) {
-            Hour hour=new Hour(9,2);
-            holder.setHour(hour);
+            holder.setHour(position+8);
+            holder.checkState(position);
         }
 
         @Override
         public int getItemCount() {
-            return 6;
+            return 12;
         }
 
         public class MyViewHolder extends RecyclerView.ViewHolder {
-
+            TextView hourText;
+            TextView message;
             public MyViewHolder( View itemView) {
                 super(itemView);
-                LinearLayout linearLayout= itemView.findViewById(R.id.layout);
-                TextView hour = itemView.findViewById(R.id.hour);
-                TextView message = itemView.findViewById(R.id.message);
+                hourText = itemView.findViewById(R.id.hour);
+                message = itemView.findViewById(R.id.message);
             }
-            public void setHour(Hour hour){
+            public void setHour(int hour){
+                hourText.setText(hour+" - ");
+            }
+            public void setLineColor(int color){
+                this.itemView.setBackgroundColor(color);
+            }
+            public void checkState(int position){
+                if (SIngleton.isHourFull(intDate,position+8)) {
+                    setLineColor(Color.RED);
+                    message.setText("Pas de terrains disponibles.");
+                } else {
+                    if (SIngleton.isHourReserved(intDate,position+8)) {
+                        setLineColor(Color.BLUE);
+                        message.setText("Vous avez réservé un terrain.");
+                    } else {
+                        setLineColor(Color.GREEN);
+                        message.setText("Il y a des terrains disponibles.");
+                        this.itemView.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
 
+                            }
+                        });
+                    }
+                }
             }
         }
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_calendrier, menu);
         return true;
     }
-
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -123,8 +143,6 @@ public class Calendrier extends AppCompatActivity{
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
-
-
         }
     }
 }

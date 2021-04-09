@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.graphics.Color;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import java.util.ArrayList;
 
 class CalendarAdapter extends RecyclerView.Adapter<CalendarViewHolder>
 {
+    private String Tag = "coucou";
     private final ArrayList<String> daysOfMonth;
     private final OnItemListener onItemListener;
 
@@ -36,7 +38,24 @@ class CalendarAdapter extends RecyclerView.Adapter<CalendarViewHolder>
     public void onBindViewHolder(@NonNull CalendarViewHolder holder, int position)
     {
         holder.dayOfMonth.setText(daysOfMonth.get(position));
-        holder.setLineColor(Color.GRAY);
+        if(((String) holder.dayOfMonth.getText())!="") {
+            if (position % 7 < 5) {
+                if (SIngleton.isDayFull(Integer.parseInt(daysOfMonth.get(position)))) {
+                    holder.setLineColor(Color.RED);
+                } else {
+                    if (SIngleton.isDayReserved(Integer.parseInt(daysOfMonth.get(position)))) {
+                        holder.setLineColor(Color.BLUE);
+                    } else {
+                        holder.setLineColor(Color.GREEN);
+                    }
+                }
+            } else {
+                holder.setLineColor(Color.GRAY);
+            }
+        }
+        else{
+            holder.setLineColor(Color.WHITE);
+        }
     }
 
     @Override

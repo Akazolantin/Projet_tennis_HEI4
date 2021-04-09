@@ -27,20 +27,11 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.google.android.gms.common.api.Response;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.ArrayList;
 
 import javax.net.ssl.HttpsURLConnection;
 
@@ -66,6 +57,8 @@ public class Pageconnexion extends AppCompatActivity {
                         public void onResponse(String response) {
                             try {
                                 if(jsonToBoolean(response)){
+                                    JSONObject object =new JSONObject(response);
+                                    SIngleton.setId(object.getInt("id"));
                                     Intent Acitivity2 = new Intent(getApplicationContext(), PageAcceuil.class);
                                     startActivity(Acitivity2);
                                 } else {
@@ -92,8 +85,8 @@ public class Pageconnexion extends AppCompatActivity {
     private Boolean jsonToBoolean (String data) throws JSONException {
         Log.d(Tag,data);
         Boolean connection;
-            JSONObject object = new JSONObject(data);
-            connection = object.getBoolean("Verification");
+        JSONObject object = new JSONObject(data);
+        connection = object.getBoolean("Verification");
         Log.d(Tag, String.valueOf(connection));
         return connection;
     }
@@ -114,7 +107,6 @@ public class Pageconnexion extends AppCompatActivity {
 
             default:
                 return super.onOptionsItemSelected(item);
-
         }
     }
 

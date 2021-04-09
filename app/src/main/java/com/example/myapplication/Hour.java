@@ -5,7 +5,7 @@ import java.util.Date;
 public class Hour {
     private int hour;
     private int date;
-    private int color = 0xff00FF00;
+    private boolean participation = false;
     public Hour(int hour, int date){
         this.hour=hour;
         this.date=date;
@@ -23,11 +23,11 @@ public class Hour {
         this.hour = hour;
     }
 
-    public int getColor() {
-        return color;
+    public boolean isParticipation() {
+        return participation;
     }
 
-    public void setColor(int color) {
-        this.color = color;
+    public void setParticipation(boolean participation) {
+        this.participation = participation;
     }
 }
