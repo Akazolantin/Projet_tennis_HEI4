@@ -151,7 +151,7 @@ public class Pagecalendrier extends AppCompatActivity {
                         JSONArray jsonArray = new JSONArray(response);
                         for(int i=0;i<jsonArray.length();i++){
                             JSONObject object = jsonArray.getJSONObject(i);
-                            Hour hour = new Hour(object.getInt("Heure"),object.getInt("jour"));
+                            Hour hour = new Hour(object.getInt("Heure"),object.getInt("jour"),object.getInt("Terrain"));
                             if(object.getInt("Id_Joueur1")==SIngleton.getId()||object.getInt("Id_Joueur2")==SIngleton.getId()){
                                 hour.setParticipation(true);
                             }

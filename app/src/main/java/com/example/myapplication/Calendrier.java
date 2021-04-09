@@ -39,7 +39,7 @@ public class Calendrier extends AppCompatActivity{
         textedate = (TextView) findViewById(R.id.textView);
         Boutondate = (Button) findViewById(R.id.buttondate);
         Intent incomingIntent = getIntent();
-        String date = incomingIntent.getStringExtra("date");
+        date = incomingIntent.getStringExtra("date");
         intDate = incomingIntent.getIntExtra("intDate",0);
         textedate.setText(date);
 
@@ -110,7 +110,11 @@ public class Calendrier extends AppCompatActivity{
                         this.itemView.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-
+                                Intent intent = new Intent(getApplicationContext(),Reservation.class);
+                                intent.putExtra("date",date);
+                                intent.putExtra("intDate",intDate);
+                                intent.putExtra("heure",position+8);
+                                startActivity(intent);
                             }
                         });
                     }

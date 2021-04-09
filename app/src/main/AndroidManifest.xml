@@ -21,7 +21,6 @@
         android:theme="@style/Theme.MyApplication"
         android:usesCleartextTraffic="true">
         <activity android:name=".Reservation"></activity>
-        <activity android:name=".Pageadministrateur" />
         android:theme="@style/Theme.MyApplication"
         android:usesCleartextTraffic="true">
         <activity android:name=".Editer_mon_compte"></activity>
@@ -30,7 +29,6 @@
         <activity android:name=".Pageadministrateur" />
         <activity android:name=".Enregistrementcarte" />
         <activity android:name=".EnregisterMatch" />
-        <activity android:name=".Enregistrementcarte" />
         <activity android:name=".Codeportail" />
         <activity android:name=".PageAcceuil" />
         <activity android:name=".Statistique" />

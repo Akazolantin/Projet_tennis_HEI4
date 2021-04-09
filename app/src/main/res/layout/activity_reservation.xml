@@ -1,9 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Reservation">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/logotennis"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="Reserver un terrain"
+            android:textSize="30dp"
+            android:gravity="center"/>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="20dp"
+        android:weightSum="10"
+        >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:text="Date :"
+                android:textSize="25dp"
+                android:layout_weight="1.5"
+                android:textAlignment="center"
+                android:gravity="center_horizontal" />
+            <TextView
+                android:id="@+id/match_date"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:textSize="25dp"
+                android:layout_weight="1.5"
+                android:gravity="center"
+                android:layout_margin="5dp"
+                android:text="Date du match"
+                />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:text="Adversaire :"
+                android:layout_weight="1.5"
+                android:textSize="25dp"
+                android:layout_margin="5dp"
+                android:textAlignment="center"
+                android:gravity="center_horizontal" />
+
+            <Spinner
+                android:id="@+id/adversaire"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.5"
+                android:layout_margin="5dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:text="Terrain :"
+                android:textSize="25dp"
+                android:layout_weight="1.5"
+                android:layout_margin="5dp"
+                android:textAlignment="center"
+                android:gravity="center_horizontal" />
+
+            <Spinner
+                android:id="@+id/terrain"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.5"
+                android:layout_margin="5dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="3">
+            <Button
+                android:id="@+id/button_annuler"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="10dp"
+                android:text="Annuler"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="5dp"/>
+            <Button
+                android:id="@+id/button_valider"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="10dp"
+                android:text="Valider"/>
+        </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+

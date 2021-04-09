@@ -65,5 +65,27 @@ public class SIngleton {
         }
         return false;
     }
+    public static ArrayList<Integer> getTerrain(int date, int hour) {
+        ArrayList<Integer> terrains = new ArrayList<Integer>();
+        for (int i = 0; i < nbrTerrains; i++) {
+            terrains.add(i);
+        }
+        for (Hour heure : heures) {
+            for (int i = 0; i < nbrTerrains; i++) {
+                if (date == heure.getDate() && hour == heure.getHour() && terrains.get(i) == heure.getTerrain()) {
+                    terrains.remove(i);
+                }
+            }
 
+        }
+        return terrains;
+    }
+
+    public static int getNbrTerrains() {
+        return nbrTerrains;
+    }
+
+    public static void setNbrTerrains(int nbrTerrains) {
+        SIngleton.nbrTerrains = nbrTerrains;
+    }
 }

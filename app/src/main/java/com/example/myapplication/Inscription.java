@@ -84,7 +84,7 @@ public class Inscription extends AppCompatActivity {
             public void afterTextChanged(Editable s) {
                 if(text_verif_mdp.equals(text_mdp)==false ){
                     Toast.makeText(Inscription.this, "Votre mot de passe ou identifiant est incorrect", Toast.LENGTH_LONG).show();
-                    set
+
                 }
             }
         });
