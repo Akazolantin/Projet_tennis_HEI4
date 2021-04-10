@@ -23,27 +23,8 @@ public class Maildeconfirmation extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_maildeconfirmation);
-        textView = findViewById(R.id.text_view);
-        long duration = TimeUnit.MINUTES.toMillis(1);
-        new CountDownTimer(duration, 1000) {
+        setContentView(R.layout.activity_maildeconfirmation);}
 
-            @Override
-            public void onTick(long l) {
-                String sduration=String.format(Locale.FRANCE,"%02d:%02d",TimeUnit.MILLISECONDS.toMinutes(l),TimeUnit.MILLISECONDS.toSeconds(l)-
-                        TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(l)));
-                Toast.makeText(getApplicationContext(),"Message en cours d'envoie",Toast.LENGTH_LONG).show();
-                textView.setText(sduration);
-            }
-
-            @Override
-            public void onFinish() {
-                textView.setVisibility(View.GONE);
-                Toast.makeText(getApplicationContext(),"Message envoyé",Toast.LENGTH_LONG).show();
-
-            }
-        }.start();
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -103,7 +84,8 @@ public class Maildeconfirmation extends AppCompatActivity {
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
+
+        }
         }
     }
-}
 
