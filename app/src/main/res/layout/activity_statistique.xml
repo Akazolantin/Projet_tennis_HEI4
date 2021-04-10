@@ -16,7 +16,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:text="STATISTIQUES"
+            android:text="MES MATCH"
             android:textSize="30dp"
             android:gravity="center"/>
     </LinearLayout>
