@@ -24,11 +24,11 @@ public class Maildeconfirmation extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maildeconfirmation);
-        textView = findViewById(R.id.text_view);
-        long duration = TimeUnit.MINUTES.toMillis(1);
-        new CountDownTimer(duration, 1000) {
+        //textView = findViewById(R.id.text_view);
+        //long duration = TimeUnit.MINUTES.toMillis(1);
+        /*new CountDownTimer(duration, 1000) {
 
-            @Override
+           /* @Override
             public void onTick(long l) {
                 String sduration=String.format(Locale.FRANCE,"%02d:%02d",TimeUnit.MILLISECONDS.toMinutes(l),TimeUnit.MILLISECONDS.toSeconds(l)-
                         TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(l)));
@@ -74,7 +74,7 @@ public class Maildeconfirmation extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
 
-        }
+        }*/
     }
 }
 

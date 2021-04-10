@@ -52,17 +52,17 @@
         android:layout_centerHorizontal="true"
         android:layout_margin="5dp"/>
 
-    <EditText
+    <Button
         android:id="@+id/inscription_date_naissance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/inscription_prenom"
-        android:ems="10"
-        android:inputType="date"
+        android:layout_margin="5dp"
+        android:text="Date du match"
         android:gravity="center"
-        android:hint="Date de naissance"
         android:layout_centerHorizontal="true"
-        android:layout_margin="5dp"/>
+        android:ems="10"
+        />
 
 
     <EditText

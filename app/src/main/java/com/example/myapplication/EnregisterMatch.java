@@ -9,6 +9,7 @@ import android.app.DownloadManager;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -37,6 +38,7 @@ import java.util.Calendar;
 
 public class EnregisterMatch extends AppCompatActivity {
 
+    private static final String TAG = "match" ;
     Button validerButton;
     Button annulerButton;
     Button date;
@@ -49,7 +51,16 @@ public class EnregisterMatch extends AppCompatActivity {
     private NumberPicker nP4;
     private NumberPicker nP5;
     private NumberPicker nP6;
-    private ArrayList<String> joueurs= new ArrayList<String>();
+    private ArrayList<String> joueurs= new ArrayList<>();
+    private ArrayList<Integer> Ids = new ArrayList<Integer>();
+    private String resultat_match;
+    private String set1;
+    private String set2;
+    private String set3;
+    private String set4;
+    private String set5;
+    private String set6;
+    private String adv;
 
 
     @Override
@@ -66,6 +77,7 @@ public class EnregisterMatch extends AppCompatActivity {
         nP4 = findViewById(R.id.match_score_set2_j2);
         nP5 = findViewById(R.id.match_score_set3_j1);
         nP6 = findViewById(R.id.match_score_set3_j2);
+
 
         nP1.setMaxValue(7);
         nP1.setMinValue(0);
@@ -102,14 +114,80 @@ public class EnregisterMatch extends AppCompatActivity {
                 datePicker.show();
             }
         });
+        nP1.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+            @Override
+            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+                set1=String.valueOf(newVal);
+            }
+        });
+        nP2.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+            @Override
+            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+                set2=String.valueOf(newVal);
+            }
+        });
+        nP3.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+            @Override
+            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+                set3=String.valueOf(newVal);
+            }
+        });
+        nP4.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+            @Override
+            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+                set4=String.valueOf(newVal);
+            }
+        });
+        nP5.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+            @Override
+            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+                set5=String.valueOf(newVal);
+            }
+        });
+        nP6.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+            @Override
+            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+                set6=String.valueOf(newVal);
+            }
+        });
 
 
         validerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (ActivityCompat.checkSelfPermission(EnregisterMatch.this, Manifest.permission.INTERNET) == PackageManager.PERMISSION_GRANTED) {
+                    RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
+                    resultat_match=set1+"/"+set2+"_"+set3+"/"+set4+"_"+set5+"/"+set6;
+                    //date_mois=date.getText().toString();
+                     adv = adversaireSpinner.getSelectedItem().toString();
+                    String URL = "http://10.224.0.130/tennis.php?Rec_score=true&res="+resultat_match+"&Identifiant_1="+SIngleton.getId()+"&mois=4&jour=7&Identifiant_2=1";
+                    Log.d(TAG, resultat_match);
+                    Log.d(TAG, URL);
+                    if(adversaireSpinner.getSelectedItem()!="Pas d'adversaire"){
+                        URL+=Ids.get(adversaireSpinner.getSelectedItemPosition());
+                    }else{URL+="NULL";}
 
+                    StringRequest stringRequest = new StringRequest(Request.Method.GET, URL, new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+
+                            Intent Acitivity2 = new Intent(getApplicationContext(), PageAcceuil.class);
+                            startActivity(Acitivity2);
+
+                        }
+                    }, new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            Toast.makeText(EnregisterMatch.this, "Erreur lors du chargement.", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                    queue.add(stringRequest);
+                } else {
+                    Toast.makeText(EnregisterMatch.this, "Vous n'avez pas donné la permission.", Toast.LENGTH_SHORT).show();
+                }
             }
-        });
+    });
+
 
 
         annulerButton.setOnClickListener(new View.OnClickListener() {
@@ -119,7 +197,7 @@ public class EnregisterMatch extends AppCompatActivity {
                 startActivity(Annulation);
             }
         });
-
+        joueurs.add("pas de joueur");
         if (ActivityCompat.checkSelfPermission(EnregisterMatch.this, Manifest.permission.INTERNET) == PackageManager.PERMISSION_GRANTED) {
             RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
             String URL = "http://10.224.0.130/tennis.php?Liste_Joueurs=true";
@@ -129,10 +207,10 @@ public class EnregisterMatch extends AppCompatActivity {
                     try {
                         JSONArray jsonarray = new JSONArray(response);
 
-                        for (int i=0;i<=jsonarray.length();i++) {
+                        for (int i=0;i<jsonarray.length();i++) {
                             JSONObject data = jsonarray.getJSONObject(i);
                             joueurs.add(data.getString("Identifiant"));
-
+                            Ids.add(data.getInt("Id"));
                         }
 
                     } catch (JSONException e) {
@@ -154,6 +232,8 @@ public class EnregisterMatch extends AppCompatActivity {
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, joueurs);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         adversaireSpinner.setAdapter(adapter);
+
+
     }
 
 
