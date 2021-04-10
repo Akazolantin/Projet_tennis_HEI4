@@ -12,7 +12,6 @@ import android.view.View;
 import android.widget.Button;
 
 public class Pageadministrateur extends AppCompatActivity {
-    private Button bouton1;
     private Button bouton2;
     private Button bouton3;
 
@@ -20,14 +19,6 @@ public class Pageadministrateur extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pageadministrateur);
-        this.bouton1 = (Button) findViewById(R.id.BoutonGestionclient);
-        bouton1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent otherActivity = new Intent(getApplicationContext(),Gestiondesclient.class);
-                startActivity(otherActivity);
-            }
-        });
         this.bouton2 = (Button) findViewById(R.id.BoutonGestionterrain);
         bouton2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,14 +40,49 @@ public class Pageadministrateur extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.administrateur, menu);
+        if(SIngleton.getId() == 0) {
+            getMenuInflater().inflate(R.menu.not_connected, menu);
+        }else{
+            if(SIngleton.isAdmin()){
+                getMenuInflater().inflate(R.menu.admin, menu);
+            }else{
+                getMenuInflater().inflate(R.menu.connected, menu);
+            }
+        }
         return true;
     }
-
     @Override
-    public boolean onOptionsItemSelected( MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+            case R.id.menu_admin:
+                Intent Acitivity9 = new Intent(getApplicationContext(), Pageadministrateur.class);
+                startActivity(Acitivity9);
+                return true;
+            case R.id.menu_inscription:
+                Intent Acitivity8 = new Intent(getApplicationContext(), Inscription.class);
+                startActivity(Acitivity8);
+                return true;
+            case R.id.connexion:
+                Intent Acitivity7 = new Intent(getApplicationContext(), Pageconnexion.class);
+                startActivity(Acitivity7);
+                return true;
+            case R.id.menu_calendrier:
+                Intent Acitivity6 = new Intent(getApplicationContext(), Pagecalendrier.class);
+                startActivity(Acitivity6);
+                return true;
+            case R.id.menu_accueil:
+                Intent Acitivity5= new Intent(getApplicationContext(), MainActivity.class);
+                if(SIngleton.getId() != 0) {
+                    Acitivity5 = new Intent(getApplicationContext(), PageAcceuil.class);}
+                startActivity(Acitivity5);
+                return true;
+            case R.id.menu_match:
+                Intent Acitivity4 = new Intent(getApplicationContext(), EnregisterMatch.class);
+                startActivity(Acitivity4);
+                return true;
             case R.id.menu_deconnexion:
+                SIngleton.setAdmin(false);
+                SIngleton.setId(0);
                 Intent Acitivity1 = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(Acitivity1);
                 return true;
@@ -70,7 +96,6 @@ public class Pageadministrateur extends AppCompatActivity {
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
-
+        }
     }
-}
 }

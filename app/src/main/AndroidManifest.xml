@@ -25,16 +25,12 @@
         android:usesCleartextTraffic="true">
         <activity android:name=".Editer_mon_compte"></activity>
         <activity android:name=".Gestion_terrains" />
-        <activity android:name=".Gestiondesclient" />
         <activity android:name=".Pageadministrateur" />
-        <activity android:name=".Enregistrementcarte" />
         <activity android:name=".EnregisterMatch" />
         <activity android:name=".Codeportail" />
         <activity android:name=".PageAcceuil" />
         <activity android:name=".Statistique" />
         <activity android:name=".Information" />
-        <activity android:name=".Messageenvoie" />
-        <activity android:name=".Tableusernamemotdepasse" />
         <activity android:name=".Maildeconfirmation" />
         <activity android:name=".Inscription" />
         <activity android:name=".Pagecalendrier" />

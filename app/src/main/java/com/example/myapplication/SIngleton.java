@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class SIngleton {
     private static ArrayList<Hour> heures = new ArrayList<Hour>();
     private static int nbrTerrains=6;
-    private static int id;
+    private static int id=0;
     private static int mois;
 
     private static boolean admin;
