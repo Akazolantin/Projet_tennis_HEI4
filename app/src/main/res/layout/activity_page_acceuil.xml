@@ -27,7 +27,7 @@
         android:id="@+id/button2"
         android:layout_width="336dp"
         android:layout_height="56dp"
-        android:text="STATISTIQUES PERSONELLES"
+        android:text="MES MATCHS"
         android:gravity="center"
         android:layout_below="@+id/textView3"
         android:layout_centerHorizontal="true"

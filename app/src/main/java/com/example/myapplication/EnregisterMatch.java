@@ -62,7 +62,10 @@ public class EnregisterMatch extends AppCompatActivity {
     private String set4;
     private String set5;
     private String set6;
-    private String adv;
+    private int lday;
+    private int lmonth;
+    private int lyear;
+
 
 
     @Override
@@ -103,9 +106,9 @@ public class EnregisterMatch extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 calendar = Calendar.getInstance();
-                int lday = calendar.get(Calendar.DAY_OF_MONTH);
-                int lmonth = calendar.get(Calendar.MONTH);
-                int lyear = calendar.get(Calendar.YEAR);
+                lday = calendar.get(Calendar.DAY_OF_MONTH);
+                lmonth = calendar.get(Calendar.MONTH);
+                lyear = calendar.get(Calendar.YEAR);
 
                 datePicker = new DatePickerDialog(EnregisterMatch.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
@@ -160,19 +163,17 @@ public class EnregisterMatch extends AppCompatActivity {
                 if (ActivityCompat.checkSelfPermission(EnregisterMatch.this, Manifest.permission.INTERNET) == PackageManager.PERMISSION_GRANTED) {
                     RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
                     resultat_match=set1+"/"+set2+"_"+set3+"/"+set4+"_"+set5+"/"+set6;
-                    //date_mois=date.getText().toString();
-                     adv = adversaireSpinner.getSelectedItem().toString();
-                    String URL = "http://10.224.0.130/tennis.php?Rec_score=true&res="+resultat_match+"&Identifiant_1="+SIngleton.getId()+"&mois=4&jour=7&Identifiant_2=1";
+                    String URL = "http://10.224.0.130/tennis.php?Rec_score=true&res="+resultat_match+"&Identifiant_1="+SIngleton.getId()+"&mois="+lmonth+"&jour="+lday+"&Identifiant_2=";
                     Log.d(TAG, resultat_match);
-                    Log.d(TAG, URL);
                     if(adversaireSpinner.getSelectedItem()!="Pas d'adversaire"){
                         URL+=Ids.get(adversaireSpinner.getSelectedItemPosition());
                     }else{URL+="NULL";}
+                    Log.d(TAG, URL);
 
                     StringRequest stringRequest = new StringRequest(Request.Method.GET, URL, new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
-
+                            Toast.makeText(EnregisterMatch.this, "votre match à bien été enregistré", Toast.LENGTH_LONG).show();
                             Intent Acitivity2 = new Intent(getApplicationContext(), PageAcceuil.class);
                             startActivity(Acitivity2);
 
@@ -200,6 +201,7 @@ public class EnregisterMatch extends AppCompatActivity {
             }
         });
         joueurs.add("pas de joueur");
+        Ids.add(0);
         if (ActivityCompat.checkSelfPermission(EnregisterMatch.this, Manifest.permission.INTERNET) == PackageManager.PERMISSION_GRANTED) {
             RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
             String URL = "http://10.224.0.130/tennis.php?Liste_Joueurs=true";

@@ -58,10 +58,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/inscription_prenom"
         android:layout_margin="5dp"
-        android:text="Date du match"
+        android:text="Date de naissance"
         android:gravity="center"
         android:layout_centerHorizontal="true"
-        android:ems="10"
+        android:ems="12"
         />
 
 
