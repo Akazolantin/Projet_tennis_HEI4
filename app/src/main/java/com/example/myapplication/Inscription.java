@@ -145,6 +145,20 @@ public class Inscription extends AppCompatActivity {
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        if(SIngleton.getId() == 0) {
+            getMenuInflater().inflate(R.menu.not_connected, menu);
+        }else{
+            if(SIngleton.isAdmin()){
+                getMenuInflater().inflate(R.menu.admin, menu);
+            }else{
+                getMenuInflater().inflate(R.menu.connected, menu);
+            }
+        }
+        return true;
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.menu_admin:
