@@ -89,10 +89,11 @@ public class SIngleton {
         for (int i = 0; i < nbrTerrains; i++) {
             terrains.add(i);
         }
-        for (Hour heure : heures) {
-            for (int i = 1; i < nbrTerrains; i++) {
+        for (int i = 1; i < nbrTerrains; i++) {
+            for (Hour heure : heures) {
                 if (date == heure.getDate() && hour == heure.getHour() && terrains.get(i) == heure.getTerrain()) {
-                    terrains.remove(i);
+                    if(i>=terrains.size()){return terrains;}
+                    terrains.remove(i);i--;
                 }
             }
 

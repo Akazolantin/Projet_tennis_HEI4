@@ -56,6 +56,7 @@ public class Pagecalendrier extends AppCompatActivity {
         setContentView(R.layout.activity_pagecalendrier);
         initWidgets();
         selectedDate = LocalDate.now();
+        setMonthView();
         downloadURL();
     }
 
@@ -153,9 +154,16 @@ public class Pagecalendrier extends AppCompatActivity {
                         for(int i=0;i<jsonArray.length();i++){
                             JSONObject object = jsonArray.getJSONObject(i);
                             Hour hour = new Hour(object.getInt("Heure"),object.getInt("jour"),object.getInt("Terrain"));
-                            if(object.getInt("Id_Joueur1")==SIngleton.getId()||object.getInt("Id_Joueur2")==SIngleton.getId()){
+                            if(!object.isNull("Id_Joueur2")){
+                                if(object.getInt("Id_Joueur1")==SIngleton.getId()||object.getInt("Id_Joueur2")==SIngleton.getId()){
+                                    hour.setParticipation(true);
+                                }
+                            }else{
+                                if(object.getInt("Id_Joueur1")==SIngleton.getId()){
                                 hour.setParticipation(true);
+                                }
                             }
+
                             SIngleton.addHour(hour);
                         }
                         setMonthView();
