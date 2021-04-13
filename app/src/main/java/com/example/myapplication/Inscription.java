@@ -99,9 +99,11 @@ public class Inscription extends AppCompatActivity {
                 buttonvalidation.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        Log.d(TAG, text_mdp.getText().toString()+text_verif_mdp.getText().toString());
+
                         if (TextUtils.isEmpty(text_nom.getText().toString()) || TextUtils.isEmpty(text_prenom.getText().toString()) || TextUtils.isEmpty(text_date.getText().toString()) || TextUtils.isEmpty(text_email.getText().toString()) || TextUtils.isEmpty(text_identifiant.getText().toString()) || TextUtils.isEmpty(text_mdp.getText().toString()) || TextUtils.isEmpty(text_verif_mdp.getText().toString())) {
                             Toast.makeText(Inscription.this, "Un ou plusieurs champ non rempli", Toast.LENGTH_LONG).show();
-                        } else if (text_mdp.getText() != text_verif_mdp.getText()) {
+                        } else if (text_mdp.getText().toString().equals(text_verif_mdp.getText().toString()) == false) {
                             Toast.makeText(Inscription.this, "veuillez entrer deux mot de passe identiques", Toast.LENGTH_LONG).show();
 
                         } else {
@@ -118,7 +120,7 @@ public class Inscription extends AppCompatActivity {
                                 StringRequest stringRequest = new StringRequest(Request.Method.GET, URL, new Response.Listener<String>() {
                                     @Override
                                     public void onResponse(String response) {
-
+                                        Toast.makeText(Inscription.this, "Inscription effectuée", Toast.LENGTH_SHORT).show();
                                         Intent Acitivity2 = new Intent(getApplicationContext(), PageAcceuil.class);
                                         startActivity(Acitivity2);
 

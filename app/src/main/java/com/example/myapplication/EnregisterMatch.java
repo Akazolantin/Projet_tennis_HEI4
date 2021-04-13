@@ -163,7 +163,7 @@ public class EnregisterMatch extends AppCompatActivity {
                 if (ActivityCompat.checkSelfPermission(EnregisterMatch.this, Manifest.permission.INTERNET) == PackageManager.PERMISSION_GRANTED) {
                     RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
                     resultat_match=set1+"/"+set2+"_"+set3+"/"+set4+"_"+set5+"/"+set6;
-                    String URL = "http://10.224.0.130/tennis.php?Rec_score=true&res="+resultat_match+"&Identifiant_1="+SIngleton.getId()+"&mois="+lmonth+"&jour="+lday+"&Identifiant_2=";
+                    String URL = "http://10.224.0.130/tennis.php?Rec_score=true&res="+resultat_match+"&Identifiant_1="+SIngleton.getId()+"&mois=4&jour=12&Identifiant_2=";
                     Log.d(TAG, resultat_match);
                     if(adversaireSpinner.getSelectedItem()!="Pas d'adversaire"){
                         URL+=Ids.get(adversaireSpinner.getSelectedItemPosition());
